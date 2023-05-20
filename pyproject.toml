@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "project-monitoring-avito-ads"
+version = "0.1.0"
+description = ""
+authors = ["Viktor Kislyak <viktorkislyak1996@gmail.com>"]
+readme = "README.md"
+packages = [{include = "project_monitoring_avito_ads"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pre-commit = "^3.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
