@@ -1,0 +1,42 @@
+version: '3.1'
+services:
+#  app:
+#    container_name: 'app'
+#    image: app
+#    build:
+#      dockerfile: Dockerfile
+#      context: .
+#    volumes:
+#      - ./Project_monitoring_avito_ads:/app
+#    environment:
+#      - MONGO_URL=mongodb://mongo_db/avito_ads
+#    env_file:
+#      - .env
+#    depends_on:
+#      - db
+#    ports:
+#      - "8000:8000"
+  db:
+    image: mongo:4.0.4
+    restart: always
+    container_name: mongo
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    volumes:
+      - avito_ads_db:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+    ports:
+      - '27017:27017'
+    networks:
+      - custom
+
+networks:
+  custom:
+    driver: bridge
+
+volumes:
+  avito_ads_db:
