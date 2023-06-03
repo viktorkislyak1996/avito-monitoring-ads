@@ -9,7 +9,19 @@ packages = [{include = "project_monitoring_avito_ads"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pre-commit = "^3.3.2"
+fastapi = "^0.95.2"
+uvicorn = "^0.22.0"
+pymongo = "^4.3.3"
+python-dotenv = "^1.0.0"
+motor = "^3.1.2"
+beautifulsoup4 = "^4.12.2"
+requests = "2.22.0"
+lxml = "^4.9.2"
+transliterate = "^1.10.2"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
 
 [build-system]
 requires = ["poetry-core"]
