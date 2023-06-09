@@ -1,10 +1,9 @@
 from datetime import datetime
-from typing import Optional
 
 from bson import ObjectId
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 
-from core.database import PyObjectId
+from app.db.database import PyObjectId
 
 
 class Query(BaseModel):
@@ -54,44 +53,3 @@ class CounterOut(BaseModel):
     class Config:
         orm_mode = True
         exclude = {"timestamp", "id", "query_id"}
-
-
-# class User(BaseModel):
-#     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-#     email: EmailStr
-#     password: str
-#     first_name: str
-#     last_name: str
-#
-#     class Config:
-#         allow_population_by_field_name = True
-#         arbitrary_types_allowed = True
-#         json_encoders = {ObjectId: str}
-#         schema_extra = {
-#             "example": {
-#                 "email": "example@example.com",
-#                 "password": "password",
-#                 "first_name": "John",
-#                 "last_name": "Doe"
-#             }
-#         }
-#
-#
-# class UpdateUser(BaseModel):
-#     email: EmailStr | None
-#     password: str | None
-#     first_name: str | None
-#     last_name: str | None
-#
-#     class Config:
-#         allow_population_by_field_name = True
-#         arbitrary_types_allowed = True
-#         json_encoders = {ObjectId: str}
-#         schema_extra = {
-#             "example": {
-#                 "email": "example@example.com",
-#                 "password": "password",
-#                 "first_name": "John",
-#                 "last_name": "Doe"
-#             }
-#         }
