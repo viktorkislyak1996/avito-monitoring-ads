@@ -28,7 +28,7 @@ services:
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
     volumes:
       - avito_ads_db:/data/db
-      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+      - ./scripts/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
     ports:
       - '27017:27017'
     networks:

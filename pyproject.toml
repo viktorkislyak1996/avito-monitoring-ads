@@ -15,9 +15,10 @@ pymongo = "^4.3.3"
 python-dotenv = "^1.0.0"
 motor = "^3.1.2"
 beautifulsoup4 = "^4.12.2"
-requests = "2.22.0"
 lxml = "^4.9.2"
 transliterate = "^1.10.2"
+aiohttp = "^3.8.4"
+requests = "2.25.1"
 
 
 [tool.poetry.group.dev.dependencies]
